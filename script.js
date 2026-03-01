@@ -667,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         }, 500);
                     } catch (err) {
-                        setTimeout(() => addTerminalLine('<span class="cmd">ERROR:</span> ' + err.message + '. (Target: https://jlep-backend.onrender.com)'), 500);
+                        setTimeout(() => addTerminalLine('<span class="cmd">ERROR:</span> Global server is currently unreachable. Please try again in 60s.'), 500);
                     }
                 }, 600);
             } else if (sub === 'delete' && args.length >= 2) {

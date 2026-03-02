@@ -889,14 +889,15 @@ footer p {
 .terminal-overlay {
     position: fixed;
     inset: 0;
-    background: #000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
     z-index: 150001;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.3s;
 }
 
 .terminal-overlay.open {
@@ -905,10 +906,10 @@ footer p {
 }
 
 .terminal-window {
-    width: 100vw;
-    height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 90vw;
+    height: 85vh;
+    max-width: 1200px;
+    max-height: 900px;
     display: flex;
     flex-direction: column;
     background: #000;
@@ -1171,6 +1172,46 @@ footer p {
     transition-delay: 0.15s;
 }
 
+.terminal-info-section {
+    padding: 6rem 5%;
+    margin-top: 4rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.terminal-hint-inline {
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+}
+
+.terminal-hint-inline kbd {
+    background: rgba(255, 62, 62, 0.1);
+    border: 1px solid rgba(255, 62, 62, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--primary-color);
+}
+
+.terminal-btn {
+    margin-top: 2rem;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-tech);
+    letter-spacing: 2px;
+    cursor: none;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.terminal-btn:hover {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
 @media (max-width: 768px) {
     .info-grid {
         grid-template-columns: 1fr;
@@ -1189,6 +1230,5 @@ footer p {
         height: 100vh;
         max-width: 100vw;
         max-height: 100vh;
-        border: 2px solid var(--primary-color);
     }
 }

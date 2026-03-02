@@ -332,6 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function toggleTerminal(forceClose) {
+        if (!experienceStarted) return;
         if (forceClose || terminalOpen) {
             terminalOverlay && terminalOverlay.classList.remove('open');
             document.documentElement.classList.remove('terminal-open');
@@ -467,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 addTerminalLine('Threat Level: <span class="cmd">MODERATE</span>');
             },
             'about': () => {
-                addTerminalLine('Controlled — Just Like Every Puzzle');
+                addTerminalLine('Controlled');
                 addTerminalLine('A browser-based riddle game inspired by Notpron.');
                 addTerminalLine('Created Feb 2026. Over 100 levels.');
             },
@@ -869,6 +870,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (terminalClose) {
         terminalClose.addEventListener('click', () => toggleTerminal(true));
+    }
+
+    const launchBtn = document.getElementById('launch-terminal');
+    if (launchBtn) {
+        launchBtn.addEventListener('click', () => toggleTerminal());
     }
     console.log("%cYou found a secret!", "color: #ff3e3e; font-size: 20px; font-weight: bold;");
     console.log("%cNothing here yet. Come back later!", "color: #ff3e3e; opacity: 0.7; font-size: 14px;");

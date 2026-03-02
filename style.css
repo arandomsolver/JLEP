@@ -460,7 +460,7 @@ main {
     height: auto;
     display: block;
     margin: 0 auto;
-    filter: grayscale(0.5) contrast(1.2);
+    filter: contrast(1.2);
     transition: filter 0.5s, transform 0.5s;
 }
 

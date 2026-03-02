@@ -430,10 +430,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const commands = {
             'help': () => addTerminalLine(
-                'Available commands: <span class="cmd">help</span>, <span class="cmd">log</span>, <span class="cmd">status</span>, <span class="cmd">about</span>, <span class="cmd">solvers</span>, <span class="cmd">progress</span>, <span class="cmd">ping</span>, <span class="cmd">date</span>, <span class="cmd">clear</span><br>' +
-                'Solvers: <span class="cmd">solvers</span> (view), <span class="cmd">solvers register &lt;name&gt; &lt;pass&gt;</span>, <span class="cmd">solvers switch &lt;name&gt; &lt;pass&gt;</span>, <span class="cmd">solvers delete &lt;name&gt; &lt;pass&gt;</span>, <span class="cmd">solvers rename &lt;old&gt; &lt;new&gt; &lt;pass&gt;</span>, <span class="cmd">solvers local</span>, <span class="cmd">solvers global</span><br>' +
-                'Progress: <span class="cmd">progress</span> (view), <span class="cmd">progress reset &lt;pass&gt;</span>, <span class="cmd">progress reset all &lt;pass1&gt; &lt;pass2&gt; ...</span>'
+                'Available commands: <span class="cmd">help</span>, <span class="cmd">manual</span>, <span class="cmd">log</span>, <span class="cmd">status</span>, <span class="cmd">about</span>, <span class="cmd">solvers</span>, <span class="cmd">progress</span>, <span class="cmd">ping</span>, <span class="cmd">date</span>, <span class="cmd">clear</span>'
             ),
+            'manual': () => {
+                addTerminalLine('=== SYSTEM COMMAND MANUAL ===');
+                addTerminalLine('<span class="cmd">help</span>: Displays a concise list of all available commands.');
+                addTerminalLine('<span class="cmd">manual</span>: Opens this detailed functional manual.');
+                addTerminalLine('<span class="cmd">log</span>: Displays recent system history and lore entries.');
+                addTerminalLine('<span class="cmd">status</span>: Reports current system connectivity and active solver state.');
+                addTerminalLine('<span class="cmd">about</span>: Basic information about the Controlled project.');
+                addTerminalLine('<span class="cmd">ping</span>: Measures real-time network latency to external mainframes.');
+                addTerminalLine('<span class="cmd">date</span>: Displays current system timestamp and uptime.');
+                addTerminalLine('<span class="cmd">clear</span>: Wipes the terminal buffer.');
+                addTerminalLine('---');
+                addTerminalLine('<span class="cmd">solvers register &lt;name&gt; &lt;pass&gt;</span>: Creates a new secured profile.');
+                addTerminalLine('<span class="cmd">solvers switch &lt;name&gt; &lt;pass&gt;</span>: Switches to a different local profile.');
+                addTerminalLine('<span class="cmd">solvers rename &lt;old&gt; &lt;new&gt; &lt;pass&gt;</span>: Globally renames a profile.');
+                addTerminalLine('<span class="cmd">solvers delete &lt;name&gt; &lt;pass&gt;</span>: Permanently wipes a profile.');
+                addTerminalLine('<span class="cmd">solvers local</span>: Lists all profiles stored on this device.');
+                addTerminalLine('<span class="cmd">solvers global</span>: Displays the world-wide top rankings.');
+                addTerminalLine('---');
+                addTerminalLine('<span class="cmd">progress reset &lt;pass&gt;</span>: Wipes tracking data for the active solver.');
+                addTerminalLine('<span class="cmd">progress reset all &lt;pass1&gt; ...</span>: Performs a critical factory reset.');
+            },
             'log': () => {
                 addTerminalLine('[LOG 001] Someone named arandomsolver hacked into my computer and installed this program. Said that no one can escape unless they decrypt this so I tried to figure it out.  — Feb 26, 2026');
                 addTerminalLine('[LOG 002] I found out that the user added some security measures to the program by adding new passwords to all accounts. Mine was some kind of decrypted message. — Mar 01, 2026');
